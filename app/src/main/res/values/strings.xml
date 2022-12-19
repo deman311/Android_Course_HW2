@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Class23A-and-HW1</string>
+    <string name="app_name">Alien Collector II</string>
+    <string name="title_activity_score">ScoreActivity</string>
 </resources>
