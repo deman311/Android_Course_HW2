@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        HighScoreManager.generateRandomHighScores();
+        HighScoreManager.loadHighScores(this);
 
         findViewById(R.id.menu_BTN_play_arrow_slow).setOnClickListener(oc -> {
             Intent intent = new Intent(getApplicationContext(), GameActivity.class);
@@ -36,5 +36,11 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), ScoreActivity.class);
             startActivity(intent);
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        HighScoreManager.saveHighScores();
     }
 }

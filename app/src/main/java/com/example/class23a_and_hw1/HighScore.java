@@ -7,6 +7,13 @@ public class HighScore {
     public int score, place;
     LatLng position;
 
+    public HighScore(int score, String name, int place, LatLng position) {
+        this.score = score;
+        this.name = name;
+        this.place = place;
+        this.position = position;
+    }
+
     public LatLng getPosition() {
         return position;
     }
